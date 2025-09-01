@@ -297,29 +297,7 @@ You'll need to set up the following services:
    Create a `.env` file in the root directory:
 
    ```bash
-   cp .env.example .env  # if you have an example file
-   # or create .env manually
-   ```
-
-   Add the following environment variables to your `.env` file:
-
-   ```env
-   # Database
-   DATABASE_URL="postgresql://postgres:password@localhost:5432/finance_tracker"
-
-   # NextAuth.js
-   AUTH_SECRET="your-secret-key-here"  # Generate with: openssl rand -base64 32
-   NEXTAUTH_URL="http://localhost:3000"
-
-   # Google OAuth
-   AUTH_GOOGLE_ID="your-google-client-id"
-   AUTH_GOOGLE_SECRET="your-google-client-secret"
-
-   # Google Gemini AI
-   GEMINI_API_KEY="your-gemini-api-key"
-
-   # Node Environment(optional, if not set, it will be set to development)
-   NODE_ENV="development"
+   cp .env.example .env
    ```
 
 4. **Start the database**
@@ -350,6 +328,21 @@ You'll need to set up the following services:
    ```
 
 The application will be available at [http://localhost:3000](http://localhost:3000).
+
+### Docker installation
+
+Ensure docker engine is intalled in your system. Refer these [docs](https://docs.docker.com/get-started/get-docker/) to install docker locally.
+
+Now build the image:
+```bash
+docker build -t fintracker .
+```
+
+Run the container:
+Make sure you have a valid .env file in the project root with all required environment variables.
+```bash
+docker run --env-file .env -p 3000:3000 fintracker
+```
 
 ### Environment Variables Details
 
