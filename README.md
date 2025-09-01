@@ -2,6 +2,9 @@
 
 A comprehensive Personal Finance Assistant built with Next.js, tRPC, and shadcn/ui components.
 
+## Demo video
+https://github.com/user-attachments/assets/85f7fd7e-b6d2-4344-8e86-d4834d1e109b
+
 ## Features Implemented
 
 ### Core Features
